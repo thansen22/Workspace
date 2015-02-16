@@ -41,3 +41,9 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# my directories
+.metadata/
+.recommenders/
+ISYAutomation/
+lib/
