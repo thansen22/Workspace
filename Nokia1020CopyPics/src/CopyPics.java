@@ -22,8 +22,7 @@ public class CopyPics {
 		    System.out.println("Description: "+fsv.getSystemTypeDescription(path));
 		}
 		
-		/*
-		File dir = new File("C:\\users\\timha_000");
+		File dir = new File("\\\\?\\Timmay\\Phone\\");
 		File[] listOfPics = dir.listFiles();
 		if (listOfPics != null)
 		{
@@ -31,7 +30,6 @@ public class CopyPics {
 			{
 				System.out.println(file.getName());			
 			}
-		}
-		*/
+		}		
 	}
 }
