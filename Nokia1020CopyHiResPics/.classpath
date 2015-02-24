@@ -10,6 +10,6 @@
 			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="Nokia1020CopyHiResPics/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/timha_000/Documents/GitHub/Workspace/Nokia1020CopyHiResPics/lib/jMTPe.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tim/Documents/workspace/Nokia1020CopyHiResPics/lib/jMTPe.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
