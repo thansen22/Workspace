@@ -1,7 +1,7 @@
+import java.util.Hashtable;
 import java.util.Scanner;
 
 public class ReverseNumberAndString {
-
 	public static void main(String[] args) {
 		System.out.println("Enter a string to reverse: ");
 		Scanner scan = new Scanner(System.in);
