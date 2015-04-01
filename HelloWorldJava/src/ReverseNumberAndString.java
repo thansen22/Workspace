@@ -22,7 +22,7 @@ public class ReverseNumberAndString {
 			intInput /= 10;
 		}	
 		System.out.println(intOutput);
-		
+
 		scan.close();
 	}
 
