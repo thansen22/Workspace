@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.TreeSet;
 
 
 public class Collections {
@@ -29,6 +30,18 @@ public class Collections {
 		}
 		temp.delete(temp.length()-2, temp.length());
 		System.out.println(temp);
+				
+		// TreeSet tests 
+		TreeSet<Integer> ts = new TreeSet<>();
+		ts.add(1);
+		ts.add(2);
+		ts.add(3);
+		ts.add(4);
+		ts.add(5);
+		ts.remove(ts.first());
+		System.out.println(ts.first());		
+		System.out.println(ts.last());
+
 	}
 	
 	public static int[] fibArray = new int[]{ 1, 2, 3, 5, 8, 13, 21, 34 };

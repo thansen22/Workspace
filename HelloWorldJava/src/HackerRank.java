@@ -2,7 +2,7 @@
 import java.util.*;
 //import org.apache.commons.jxpath.util.ValueUtils;
 
-public class Practice
+public class HackerRank
 {    
     static void findIndex(int[] numArray, int value)
     {
