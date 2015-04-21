@@ -2,9 +2,12 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.AbstractQueue;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Stack;
 import java.util.TreeMap;
@@ -12,23 +15,28 @@ import java.util.TreeMap;
 public class Interviews {
 
 	public static void main(String[] args) {
+		//Possible LinkedIn
+		System.out.println(linkedInIpow(5, 5));
+		BalancedBinaryTree bt = new BalancedBinaryTree(new ArrayList<Integer>(Arrays.asList(9,2,5,4,6,-9)));
+		linkdInBFS(bt.getHead());
+		
 		//Yahoo!
-		yahooExpandUrls("www.yahoo.com", 3);
-		ArrayList<Integer> a = new ArrayList<>();
-		ArrayList<Integer> b = new ArrayList<>();
-		for (int i = 0; i < 5; i++) { a.add(i); }		
-		for (int i = 3; i < 8; i++) { b.add(i); }
-		b.add(10);
-		yahooXoRLists(a, b);
+//		yahooExpandUrls("www.yahoo.com", 3);
+//		ArrayList<Integer> a = new ArrayList<>();
+//		ArrayList<Integer> b = new ArrayList<>();
+//		for (int i = 0; i < 5; i++) { a.add(i); }		
+//		for (int i = 3; i < 8; i++) { b.add(i); }
+//		b.add(10);
+//		yahooXoRLists(a, b);
 		
 		//A9.com
 //		a9UrlQueryStringParams("/home/timmay/workspace/HelloWorldJava/xyz.txt");		
 //		a9StackQueue q = new a9StackQueue();
 //		a9StackQueue.test(q);		
 //		a9StringFactorial("", "abcd");
-		a9NextIntPalindrome(1342);
-		a9NextIntPalindrome(-1342);
-		a9NextIntPalindrome(Integer.MAX_VALUE - 1);
+//		a9NextIntPalindrome(1342);
+//		a9NextIntPalindrome(-1342);
+//		a9NextIntPalindrome(Integer.MAX_VALUE - 1);
 
 		//Groupon
 //		String s2 = "abc def ghi";
@@ -39,8 +47,52 @@ public class Interviews {
 //		System.out.println(elementumNestedBlocks(s1));
 		
 		//Apple
-		appleNLongestWords("abcd a ab cdef xyz", 3); 
+//		appleNLongestWords("abcd a ab cdef xyz", 3); 
 		
+	}
+	
+	double sqrt(double value) {		
+		double 
+		double eps = 0.000001;
+		int it = 0, itmax = 100000;
+		do {
+			if(++it > itmax) break;
+			double ouput = (old + x/old)/2;
+		} while (abs((output/old - 1)> 0.00001))
+		return output;
+	}
+	
+	static void linkdInBFS(Node head)    
+	{      
+		LinkedList<Node> q = new LinkedList<>();
+		q.add(head);//You don't need to write the root here, it will be written in the loop
+		while (!q.isEmpty())
+		{
+		    Node n = q.remove();
+		    System.out.print(n.getValue() + ", "); //Only write the value when you dequeue it
+			if (n.getLeft() != null)
+			{
+			    q.add(n.getLeft());//enqueue the left child
+			}
+			if (n.getRight() != null)
+			{
+			   q.add(n.getRight());//enque the right child
+			}
+		}
+	}
+	
+	static int linkedInIpow(int base, int exp)
+	{
+	    int result = 1;
+	    while (exp != 0)
+	    {
+	        if ((exp & 1) == 1)
+	            result *= base;
+	        exp >>= 1;
+	        base *= base;
+	    }
+
+	    return result;
 	}
 	
 	static void yahooExpandUrls(String prefix, int d) {
@@ -227,7 +279,7 @@ public class Interviews {
 		String[] words = s.split("\\s+");
 		int i = 0;
 		if (n > 0) {			
-			while (i < n) {
+			while (i < n && i < words.length) {
 				pq.add(words[i]);
 				i++;
 			}
@@ -291,4 +343,88 @@ class a9StackQueue {
 		internalStack = new Stack<>();
 		return output;
 	}
+}
+
+class BalancedBinaryTree
+{
+    private ArrayList<Integer> _numbers;
+    private Node _root;
+
+    public BalancedBinaryTree(ArrayList<Integer> numbers)
+    {
+        this._numbers = new ArrayList<>();
+        this._numbers.addAll(numbers);
+        this._root = new Node();
+
+        this.create(this._root, 0, this._numbers.size());
+    }
+
+    public Node getHead() {
+    	return _root;
+    }
+    
+    private void create(Node tree, int i, int j)
+    {
+        if (i < j)
+        {
+            int m = i + (j - i) / 2;
+
+            tree.setValue(this._numbers.get(m));
+
+            tree.setLeft(new Node());
+            create(tree.getLeft(), i, m);
+
+            tree.setRight(new Node());
+            create(tree.getRight(), m + 1, j);
+        }
+    }
+}
+
+class Tree {
+	public Node root;
+}
+
+class Node
+{
+    private int _value;
+    private Node _left;
+    private Node _right;
+
+    public Node()
+    {
+        //this._info = Integer.MIN_VALUE;
+        this._left = null;
+        this._right = null;
+    }
+
+
+    public int getValue()
+    {
+        return _value;
+    }
+
+    public void setValue(int _info)
+    {
+        this._value = _info;
+    }
+
+    public Node getLeft()
+    {
+        return _left;
+    }
+
+    public void setLeft(Node _left)
+    {
+        this._left = _left;
+    }
+
+    public Node getRight()
+    {
+        return _right;
+    }
+
+    public void setRight(Node _right)
+    {
+        this._right = _right;
+    } 
 }
