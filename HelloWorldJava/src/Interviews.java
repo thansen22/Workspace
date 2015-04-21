@@ -51,16 +51,16 @@ public class Interviews {
 		
 	}
 	
-//	double sqrt(double value) {		
-//		double 
-//		double eps = 0.000001;
-//		int it = 0, itmax = 100000;
-//		do {
-//			if(++it > itmax) break;
-//			double ouput = (old + x/old)/2;
-//		} while (abs((output/old - 1)> 0.00001))
-//		return output;
-//	}
+	double sqrt(double value) {		
+		double 
+		double eps = 0.000001;
+		int it = 0, itmax = 100000;
+		do {
+			if(++it > itmax) break;
+			double ouput = (old + x/old)/2;
+		} while (abs((output/old - 1)> 0.00001))
+		return output;
+	}
 	
 	static void linkdInBFS(Node head)    
 	{      
