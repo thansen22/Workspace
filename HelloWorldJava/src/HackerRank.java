@@ -211,33 +211,46 @@ public class HackerRank
 		System.out.println("");	
     }
     
+    
+    
     public static void main(String[] args) 
     {
         Scanner in = new Scanner(System.in);
         //String encode = in.nextLine();
         //int v = in.nextInt();        
         int n = in.nextInt();
+        int m = in.nextInt();
         //int[] numArray = new int[n];
         
-        for(int i=0;i<n;i++) {
+        int newConnection = in.nextInt();
+        int value = in.nextInt();
+        Tree t = new Tree(value, newConnection);
+        
+        for(int i=1;i<m;i++) {
+        	newConnection = in.nextInt();
+            value = in.nextInt();
+            
+            t.addNode(value, newConnection);
+        //for(int i=0;i<n;i++) {
         	//numArray[i]=in.nextInt();
         	//for iceCreamParlor        	
         	//int money = in.nextInt();
-        	int items = in.nextInt();
-        	int[] numArray = new int[items - 1];
+        	//int items = in.nextInt();
+        	//int[] numArray = new int[items - 1];
         	
         	//for iceCreamParlor
-        	for (int j = 0; j < items - 1; j++) {
-        		numArray[j]=in.nextInt();
-        	}
+//        	for (int j = 0; j < items - 1; j++) {
+//        		numArray[j]=in.nextInt();
+//        	}
         	//iceCreamParlor(money, numArray);
         	//maximumSubArray(numArray);
-        	connectingTowns(numArray);
+        	//connectingTowns(numArray);
         }
       
         // finished with scanner
         in.close();
-        
+              
+        t.getHead().countChops();
         //handshake(numArray);        
         //findIndex(numArray, v);
         //insertionSort1(numArray);
@@ -247,5 +260,139 @@ public class HackerRank
         //quickSort1Partition(numArray);
         //utopianTree(numArray);    
         //encryption(encode);        
+    }
+}
+
+class Tree
+{
+    private Node _root;
+
+    public Tree()
+    {
+
+    }
+    
+    public Tree(int value, int newConnection)
+    {
+        this._root = new Node();
+        this._root.setValue(value);
+        
+        Node n = new Node();
+        n.setValue(newConnection);
+        
+        this._root.setConnection(n);
+    }
+    
+    public void addNode(int value, int newConnection) {
+    	Node n = _root.findValue(value);
+    	if (n == null) {
+    		System.out.println("error, couldn't find node to add connection to");
+    	}
+    	else {
+    		n.setConnection(new Node(newConnection));
+    	}
+    }
+
+    public Node getHead() {
+    	return _root;
+    }   
+}
+
+class Node
+{
+    private int _value;
+    private LinkedList<Node> _nodes;
+
+    public Node()
+    {
+    	this._nodes = new LinkedList<>();
+    }
+    
+    public Node(int value)
+    {
+//    	//First value, or maybe they do this out of order
+//    	if (findValue(value) == null && findValue(connectedTo) == null) {
+//    		
+//    	}
+    	this._nodes = new LinkedList<>();    		
+    	this._value = value;    	
+    }
+    
+    public void setConnection(Node newConnection) {
+    	this._nodes.add(newConnection);
+//    	Node n = findValue(connectedTo);
+//    	if (n == null) {
+//    		System.out.println("error, cannot find connected node.  Have to create one?");
+//    	}
+//    	else {
+//    		this._nodes.add(n);
+//    	}
+    }
+    
+    public void countChops() {
+    	int chops = 0;
+    	
+    	LinkedList<Node> q = new LinkedList<>();
+    	q.addAll(this._nodes);
+    	
+    	while (!q.isEmpty()) {    		
+    		Node n = q.remove();
+    		if (n.childCount() % 2 == 1) {
+    			chops++;
+    		}
+    		q.addAll(n._nodes);
+    	}
+    	
+    	System.out.println(chops);
+    }
+    
+    public int childCount() {
+    	int children = 0;
+    	
+    	LinkedList<Node> q = new LinkedList<>();
+    	q.addAll(this._nodes);
+    	
+    	while (!q.isEmpty()) {
+    		children++;
+    		Node n = q.remove();    		
+    		q.addAll(n._nodes);
+    	}
+    	
+    	return children;
+    }
+
+    public int getValue()
+    {
+        return _value;
+    }
+
+    public void setValue(int _info)
+    {
+        this._value = _info;
+    }
+
+    public Node findValue(int value) {
+    	if (this._value == value) {
+    		return this;
+    	}
+//    	else {
+//    		for (Node n : this._nodes) {
+//    			return n.findValue(value);
+//    		}
+//    	}
+    	
+    	LinkedList<Node> q = new LinkedList<>();
+    	q.add(this);
+    	
+    	while (!q.isEmpty()) {
+    		Node n = q.remove();
+    		if (n._value == value) {
+    			return n;
+    		}
+    		
+    		q.addAll(n._nodes);
+    	}
+    	
+    	return null;
     }
 }

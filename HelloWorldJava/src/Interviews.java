@@ -16,9 +16,12 @@ public class Interviews {
 
 	public static void main(String[] args) {
 		//Possible LinkedIn
-		System.out.println(linkedInIpow(5, 5));
-		BalancedBinaryTree bt = new BalancedBinaryTree(new ArrayList<Integer>(Arrays.asList(9,2,5,4,6,-9)));
-		linkdInBFS(bt.getHead());
+		//linkedInFindMultiples(123456);
+		//System.out.println(linkedInIpow(5, 5));
+		BalancedBinaryTree bt = new BalancedBinaryTree(new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6,7,8)));
+		linkedInBFS(bt.getHead());
+		System.out.println("");
+		linkedInDFS(bt.getHead());
 		
 		//Yahoo!
 //		yahooExpandUrls("www.yahoo.com", 3);
@@ -51,24 +54,38 @@ public class Interviews {
 		
 	}
 	
-	double sqrt(double value) {		
-		double 
-		double eps = 0.000001;
-		int it = 0, itmax = 100000;
-		do {
-			if(++it > itmax) break;
-			double ouput = (old + x/old)/2;
-		} while (abs((output/old - 1)> 0.00001))
-		return output;
+//	double sqrt(double value) {		
+//		double old = value;
+//		double eps = 0.000001;
+//		int it = 0, itmax = 100000;
+//		do {
+//			if(++it > itmax) break;
+//			double ouput = (old + x/old)/2;
+//		} while (abs((output/old - 1)> 0.00001))
+//		return output;
+//	}
+	
+	static void linkedInFindMultiples(int n) {
+		System.out.println(1 + " * " + n);
+		int end = n / 2;
+		for (int i = 2; i < end; i++) {
+			if (n % i == 0) {
+				int multiple = n / i;
+				System.out.println(i + " * " + multiple);
+				if (multiple < end) {
+					end = multiple;
+				}
+			}
+		}
 	}
 	
-	static void linkdInBFS(Node head)    
+	static void linkedInBFS(BinaryNode head)    
 	{      
-		LinkedList<Node> q = new LinkedList<>();
+		LinkedList<BinaryNode> q = new LinkedList<>();
 		q.add(head);//You don't need to write the root here, it will be written in the loop
 		while (!q.isEmpty())
 		{
-		    Node n = q.remove();
+			BinaryNode n = q.remove();
 		    System.out.print(n.getValue() + ", "); //Only write the value when you dequeue it
 			if (n.getLeft() != null)
 			{
@@ -79,6 +96,17 @@ public class Interviews {
 			   q.add(n.getRight());//enque the right child
 			}
 		}
+	}
+	
+	static void linkedInDFS(BinaryNode head) {
+		if (head == null) {
+			//System.out.print("e, ");
+			return;
+		}
+		
+		System.out.print(head.getValue() + ", ");
+		linkedInDFS(head.getLeft());
+		linkedInDFS(head.getRight());
 	}
 	
 	static int linkedInIpow(int base, int exp)
@@ -348,51 +376,86 @@ class a9StackQueue {
 class BalancedBinaryTree
 {
     private ArrayList<Integer> _numbers;
-    private Node _root;
+    private BinaryNode _root;
 
     public BalancedBinaryTree(ArrayList<Integer> numbers)
     {
         this._numbers = new ArrayList<>();
         this._numbers.addAll(numbers);
-        this._root = new Node();
-
-        this.create(this._root, 0, this._numbers.size());
+//        this._root = new Node();
+//        this.create(this._root, 0, this._numbers.size());
+        
+        this._root = new BinaryNode(this._numbers.get(0));
+        this.createLinear(this._root);
     }
 
-    public Node getHead() {
+    public BinaryNode getHead() {
     	return _root;
     }
     
-    private void create(Node tree, int i, int j)
+    private void create(BinaryNode tree, int i, int j)
     {
         if (i < j)
         {
-            int m = i + (j - i) / 2;
+            int m = i + ((j - i) / 2);
 
             tree.setValue(this._numbers.get(m));
 
-            tree.setLeft(new Node());
-            create(tree.getLeft(), i, m);
-
-            tree.setRight(new Node());
-            create(tree.getRight(), m + 1, j);
+            if (j - i > 1) {            	
+	            tree.setLeft(new BinaryNode());
+	            create(tree.getLeft(), i, m);
+            }
+            
+            if (j - i > 2) {
+	            tree.setRight(new BinaryNode());
+	            create(tree.getRight(), m + 1, j);
+            }
         }
+    }
+    
+    private void createLinear(BinaryNode tree) {
+    	LinkedList<BinaryNode> q = new LinkedList<>();
+    	q.add(tree);
+    	int i = 1;
+    	while (!q.isEmpty()) {
+    		tree = q.remove();
+    		
+    		if (i < this._numbers.size()) {
+    			BinaryNode n = new BinaryNode(this._numbers.get(i));
+    			tree.setLeft(n);
+    			q.add(n);
+    			i++;    			
+    		}
+    		
+    		if (i < this._numbers.size()) {
+    			BinaryNode n = new BinaryNode(this._numbers.get(i));
+    			tree.setRight(n);
+    			q.add(n);
+    			i++;
+    		}    	    		
+    	}
     }
 }
 
-class Tree {
+class BinaryTree {
 	public Node root;
 }
 
-class Node
+class BinaryNode
 {
     private int _value;
-    private Node _left;
-    private Node _right;
+    private BinaryNode _left;
+    private BinaryNode _right;
 
-    public Node()
+    public BinaryNode()
     {
-        //this._info = Integer.MIN_VALUE;
+        this._left = null;
+        this._right = null;
+    }
+    
+    public BinaryNode(int value)
+    {
+    	this._value = value;
         this._left = null;
         this._right = null;
     }
@@ -408,22 +471,22 @@ class Node
         this._value = _info;
     }
 
-    public Node getLeft()
+    public BinaryNode getLeft()
     {
         return _left;
     }
 
-    public void setLeft(Node _left)
+    public void setLeft(BinaryNode _left)
     {
         this._left = _left;
     }
 
-    public Node getRight()
+    public BinaryNode getRight()
     {
         return _right;
     }
 
-    public void setRight(Node _right)
+    public void setRight(BinaryNode _right)
     {
         this._right = _right;
     } 
