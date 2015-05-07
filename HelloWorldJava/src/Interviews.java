@@ -15,16 +15,22 @@ import java.util.TreeMap;
 public class Interviews {
 
 	public static void main(String[] args) {
+		//Apple
+		appleNLongestWords("abcd a ab cdef xyz", 3); 
+		appleInterview();
+		
 		//Possible LinkedIn
 		//linkedInFindMultiples(123456);
 		//System.out.println(linkedInIpow(5, 5));
-		BalancedBinaryTree bt = new BalancedBinaryTree(new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6,7,8)));
-		linkedInBFS(bt.getHead());
-		System.out.println("");
-		linkedInDFS(bt.getHead());
+//		BalancedBinaryTree bt = new BalancedBinaryTree(new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6,7,8)));
+//		linkedInBFS(bt.getHead());
+//		System.out.println("");
+//		linkedInDFS(bt.getHead());
+//		System.out.println("");
 		
 		//Yahoo!
-//		yahooExpandUrls("www.yahoo.com", 3);
+//		yahooExpandUrlsIterative("www.yahoo.com", 3);
+		//yahooExpandUrls("www.yahoo.com", 3);
 //		ArrayList<Integer> a = new ArrayList<>();
 //		ArrayList<Integer> b = new ArrayList<>();
 //		for (int i = 0; i < 5; i++) { a.add(i); }		
@@ -48,10 +54,7 @@ public class Interviews {
 		//Elementum
 //		String s1 = "[([]){}]";
 //		System.out.println(elementumNestedBlocks(s1));
-		
-		//Apple
-//		appleNLongestWords("abcd a ab cdef xyz", 3); 
-		
+				
 	}
 	
 //	double sqrt(double value) {		
@@ -64,6 +67,10 @@ public class Interviews {
 //		} while (abs((output/old - 1)> 0.00001))
 //		return output;
 //	}
+	
+	static void appleInterview() {
+		
+	}
 	
 	static void linkedInFindMultiples(int n) {
 		System.out.println(1 + " * " + n);
@@ -123,22 +130,52 @@ public class Interviews {
 	    return result;
 	}
 	
+	static void yahooExpandUrlsIterative(String prefix, int d) {
+		if (d == 0) {
+			System.out.println(prefix);
+		}
+		
+		LinkedList<String> urls = new LinkedList<>(); 
+		ArrayList<String> urlSubs = yahooGetUrls(prefix);
+						
+		int urlsIndex = 0;
+		while (d > 0) {
+			int sizeBefore = urlSubs.size();
+			for (int i = urlsIndex; i < sizeBefore; i++) {				
+				urls.add(urlSubs.get(i));
+				urlsIndex++;
+				
+				ArrayList<String> nextSubs = yahooGetUrls(urlSubs.get(i));
+				for (String subPost : nextSubs) {					
+					urlSubs.add(subPost);
+				}					
+			}
+			d--;
+		}
+		
+		// or you could remove the urls.add and return the LinkedList
+		for (String s : urls) {
+			System.out.println(s);
+		}
+	}
+	
 	static void yahooExpandUrls(String prefix, int d) {
 		if (d == 0) {
 			System.out.println(prefix);
 		}
 		else {
-			for (String sub : yahooGetUrls()) {
-				yahooExpandUrls(prefix + "/" + sub, d - 1);
+			for (String path : yahooGetUrls(prefix)) {
+				System.out.println(path);
+				yahooExpandUrls(path, d - 1);
 			}
 		}			
 	}
 	
 	//just a dummy function
-	static ArrayList<String> yahooGetUrls() {
+	static ArrayList<String> yahooGetUrls(String prefix) {
 		ArrayList<String> output = new ArrayList<>();
-		output.add("d1");
-		output.add("d2");
+		output.add(prefix + "/d1");
+		output.add(prefix + "/d2");
 		return output;
 	}
 	
