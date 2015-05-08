@@ -1,11 +1,17 @@
 package selinium.tests;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.logging.*;
 
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.*;
+
+import com.thoughtworks.selenium.webdriven.JavascriptLibrary;
 
 import static org.junit.Assert.*;
 //NOTE: not using TestNG as that was not part of the requirements
@@ -15,39 +21,27 @@ import static org.junit.Assert.*;
 //TODO: create logger
 
 public class YelpTests {
+	private static final Logger log = Logger.getLogger(YelpTests.class.getName());
+	private static final String logFile = "./log.xml";
+	
 	public static void yelpSearchScenario(
 			YelpDom.Search.Suggestions.DataSuggestions searchFilter, 
-			String subFilter,
+			String subSearch,
 			YelpDom.Results.Filters.FilterNames resultsFilterName,
 			YelpDom.Results.Filters.FilterType resultsFilterType) {
 				
-		// do some basic param checking
-		checkParams(searchFilter, subFilter, resultsFilterName, resultsFilterType);		
+		initializeLogger();
+		log.info(String.format("Starting test with the following args:\nsearchFilter: %s\nsubSearch: %s\nfilterName: %s\nfilterType: %s", 
+				searchFilter, subSearch, resultsFilterName.getValue(), resultsFilterType.getValue()));
 		
-		//Open up the test site
-		WebDriver driver = new FirefoxDriver();		
-		driver.get(YelpTestDriver.site);
+		// do some basic param checking		
+		checkParams(searchFilter, subSearch, resultsFilterName, resultsFilterType);		
 		
-		//mouse implementation of step #2-3
-		WebElement suggestion = findSuggestion(searchFilter, driver);
-		if (suggestion != null) {
-			suggestion.click();
-		}
-		else {
-			//TODO: write better assertion output
-			fail(String.format("error: couldn't find the suggestion dropdown element provided: %s", searchFilter.getValue()));
-		}
+		//Step #1: open site
+		WebDriver driver = openSite();
 		
-		//Keyboard implementation of step #2-3
-//		Integer suggestionKeysDown = findSuggestion(filter, driver);
-//		if (suggestionKeysDown != null) {
-//			//hit the keyboard down arrow int number of times
-//		}
-//		else {
-//			//TODO: write better assertion output
-//			fail(String.format("error: couldn't find the suggestion dropdown element provided: %s", searchFilter.getValue()));
-//		}
-//		//now hit enter		
+		//Step #2-3: set filter
+		setSuggestion(searchFilter, driver);
 		
 		//TODO: validate the page loaded prior to moving on to the next steps
 //		WebElement resultsHeader = driver.findElement(By.cssSelector(YelpDom.Results.Header.div_Css));
@@ -64,27 +58,125 @@ public class YelpTests {
 			//TODO: use assert
 			fail(String.format("error: couldn't find the results header text, found: %s instead", resultsHeaderText)); 
 		}
-			
-		//Now add the sub filter	
-		addSubFilter(subFilter, driver);
+				
+		//Step #4: Add a subSearch
+		addSubSearch(subSearch, driver);
 		
-		//Validate the new content that it says "Restaurants Pizza" now.  Need to poll as this content existed prior
+		//Validate the new content that it says the correct search now.  Need to poll as this content existed prior
 		(new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
 			public Boolean apply(WebDriver d) {
 				String resultsHeaderText = driver.findElement(By.cssSelector(YelpDom.Results.Header.h1_Css)).getText();
-				return !StringUtils.containsIgnoreCase(resultsHeaderText, String.format("%s %s", searchFilter.getValue(), subFilter));
+				return !StringUtils.containsIgnoreCase(resultsHeaderText, String.format("%s %s", searchFilter.getValue(), subSearch));
 			}
 		});
 		//TODO: need to assert this poll above
-
+		//TODONOW: BUG reports previous results... Step #5: Report the # of search results
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+				
+		//Step #5: Report result numbers
+		reportResultNums(driver);		
+		
+		//Step #6-7: Add a result filter
 		setFilters(resultsFilterName, resultsFilterType, driver);
 		
+		//Step #8: Report result numbers
 		reportResultNums(driver);
+		
+		//Step #9: Report star ratings
+		List<WebElement> resultsList = reportStars(driver);		
+
+		//Step #10: Expand the first results
+		log.finer("Starting: Expand the first results");
+		resultsList.get(0).findElement(By.cssSelector(YelpDom.Results.List.Result.a_Css)).click();
+		log.finer("Completed: Expand the first results");
+		//TODO: validation that the page loaded, though inherently it will in the next step
+		
+		//Step #11: Log all info for the result (Address, Phone, web site details, First 3 reviews)
+		reportDetailedInfo(driver);		
 		
 		driver.close();
 	}
 
+	private static void reportDetailedInfo(WebDriver driver) {
+		log.finer("Starting Step #11: Log all info for the result (Address, Phone, web site details, First 3 reviews)");
+
+		String name = "Not Found";
+		String address = "Not Found";
+		String phone = "Not Found";
+		String website = "Not Found";
+
+		try {
+			name = driver.findElement(By.cssSelector(YelpDom.Details.name_Css)).getText();		
+		} catch (NoSuchElementException e) {
+			//no-op
+		} try {
+			address = driver.findElements(By.tagName(YelpDom.Details.Info.address_tagName)).get(1).getText();
+		} catch (NoSuchElementException e) {
+			//no-op
+		} try {
+			phone = driver.findElement(By.cssSelector(YelpDom.Details.Info.phone_Css)).getText();
+		} catch (NoSuchElementException e) {
+			//no-op
+		}
+		try {
+			website = driver.findElement(By.cssSelector(YelpDom.Details.Info.website_Css)).getText();
+		} catch (NoSuchElementException e) {
+			//no-op
+		}
+		
+		log.info(String.format("Name: %s", name));
+		log.info(String.format("Address: %s", address));
+		log.info(String.format("Phone: %s", phone));
+		log.info(String.format("Website: %s", website));
+		
+		WebElement reviewsContent = driver.findElement(By.id(YelpDom.Details.Reviews.container_Id));
+		List<WebElement> reviews = reviewsContent.findElements(By.cssSelector(YelpDom.Details.Reviews.list_Css));
+		for (int i = 0; i < reviews.size() && i < 3; i++) {
+			String review = reviews.get(i).findElement(By.cssSelector(YelpDom.Details.Reviews.review_Css)).getText();
+			log.info(String.format("Review #%d:\n%s\n", i+1, review));
+		}
+		
+		log.finer("Completed Step #11: Log all info for the result (Address, Phone, web site details, First 3 reviews)");
+	}
+
+	private static List<WebElement> reportStars(WebDriver driver) {
+		log.finer("Starting: Report star ratings");
+		
+		WebElement resultsContent = driver.findElement(By.cssSelector(YelpDom.Results.List.results_Css));
+		List<WebElement> resultsList = resultsContent.findElements(By.cssSelector(YelpDom.Results.List.Result.result_Css));
+		List<WebElement> finalResultsList = new ArrayList<>();
+		ArrayList<String> ratings = new ArrayList<>();
+		for (WebElement result : resultsList) {
+			try {
+				WebElement possibleAd = result.findElement(By.cssSelector(YelpDom.Results.List.Result.ad_Css));				
+				continue;
+			} catch (NoSuchElementException e) {
+				//Do nothing				
+			}
+			
+			finalResultsList.add(result);
+			WebElement ratingElement = result.findElement(By.cssSelector(YelpDom.Results.List.Result.i_Css));
+			String ratingString = ratingElement.getAttribute(YelpDom.Results.List.Result.i_Attribute);
+			try {
+				Double rating = Double.parseDouble(ratingString.substring(0, ratingString.indexOf(" ")));
+				ratings.add(rating.toString());
+			} catch (NumberFormatException e) {
+				ratings.add("Not Found");
+			}			
+		}
+		log.info(String.format("Ratings for the results %s", ratings.toString()));
+		log.finer("Completed: Report star ratings");
+		return finalResultsList;
+	}
+
 	private static void reportResultNums(WebDriver driver) {
+		log.finer("Starting: Report result numbers");
+		
 		final String resultsPrefix = "Showing 1-";
 		final String resultsMid = " of ";
 		
@@ -94,15 +186,18 @@ public class YelpTests {
 		String rawResultsCount = resultsCountElem.getText();
 		int numResultsDisplayed = Integer.parseInt(rawResultsCount.substring(resultsPrefix.length(), resultsPrefix.length() + 2));
 		int totalNumResults = Integer.parseInt(rawResultsCount.substring(rawResultsCount.lastIndexOf(resultsMid) + resultsMid.length(), rawResultsCount.length()));
+				
+		log.info(String.format("Results shown on this page: %d", numResultsDisplayed));
+		log.info(String.format("Total number of results: %d" , totalNumResults));
 		
-		//TODO: refactor this with a logger
-		System.out.println(String.format("Displaying %d of %d results", numResultsDisplayed, totalNumResults));
+		log.finer("Completed: Report result numbers");
 	}
 
 	private static void setFilters(
 			YelpDom.Results.Filters.FilterNames resultsFilterName,
 			YelpDom.Results.Filters.FilterType resultsFilterType,			
 			WebDriver driver) {
+		log.finer("Starting: Add a result filter");
 		
 		WebElement filterPanel = driver.findElement(By.cssSelector(YelpDom.Results.Filters.Panel_div_Css));
 		
@@ -116,7 +211,7 @@ public class YelpTests {
 //		});
 		//TODONOW: remove this terrible, terrible sleep
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(4000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -144,7 +239,21 @@ public class YelpTests {
 		
 		//only click on the ones defined 
 		if (resultsFilterName != null && !filter.isSelected()) {
-			filter.click();
+
+			try {
+				filter.click();
+			}
+			//Turns out that Webdriver has some issues with the way some of the links Yelp has constructed so when that happens we have to use a simulated click instead
+			catch (ElementNotVisibleException e) {
+				log.warning("Using an emulated click for the filter as it failed");
+ 
+				JavascriptExecutor js = (JavascriptExecutor)driver; 
+				js.executeScript("arguments[0].click();", filter);
+				//JavascriptLibrary jsLib = new JavascriptLibrary();
+				//jsLib.callEmbeddedSelenium(driver, "triggerMouseEventAt", filter, "click", ".5,.5");
+			}
+			
+			
 		}
 				
 		//TODONOW: remove this terrible, terrible sleep.  Need to check for lack of spinning icon?
@@ -154,15 +263,21 @@ public class YelpTests {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		log.finer("Completed: Add a result filter");
 	}
 
-	private static void addSubFilter(String subFilter, WebDriver driver) {
+	private static void addSubSearch(String subFilter, WebDriver driver) {
+		log.finer("Starting: Add a subSearch");			
+		
 		WebElement search = driver.findElement(By.id(YelpDom.Search.input_Id));
 		search.click();
 		search.sendKeys(Keys.ARROW_RIGHT);
 		search.sendKeys(Keys.SPACE);
 		search.sendKeys(subFilter);
 		search.sendKeys(Keys.ENTER);
+		
+		log.finer("Completed: Add a subSearch");
 	}
 
 	private static WebElement findSuggestion(
@@ -207,6 +322,31 @@ public class YelpTests {
 //		}
 //		return arrowKeysDown;
 	}
+	
+	private static void setSuggestion(YelpDom.Search.Suggestions.DataSuggestions searchFilter, WebDriver driver) {
+		log.finer("Step #2-3 Starting: Choose a suggestion");
+		
+		WebElement suggestion = findSuggestion(searchFilter, driver);
+		if (suggestion != null) {
+			suggestion.click();			
+		}
+		else {
+			//TODO: write better assertion output
+			fail(String.format("error: couldn't find the suggestion dropdown element provided: %s", searchFilter.getValue()));
+		}
+		
+		log.finer("Step #2-3 Completed : Choose a suggestion");
+	}
+
+	private static WebDriver openSite() {
+		log.finer("Step #1 Starting: Open up the test site");
+		
+		WebDriver driver = new FirefoxDriver();		
+		driver.get(YelpTestDriver.site);
+		
+		log.finer("Step #1 Completed: Open up the test site");
+		return driver;
+	}
 
 	private static void checkParams(
 			YelpDom.Search.Suggestions.DataSuggestions searchFilter,
@@ -223,4 +363,16 @@ public class YelpTests {
 			fail("You must supply a filter type if you supply a filter name");
 		}
 	}
+
+	private static void initializeLogger() {
+		Handler fh = null;
+		try {
+			fh = new FileHandler(logFile);
+		} catch (SecurityException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+		log.addHandler(fh);
+		log.setLevel(Level.FINER);
+	}	
 }

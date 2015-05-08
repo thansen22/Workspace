@@ -1,7 +1,7 @@
 package selinium.tests;
 
 public class YelpDom {
-	//May consider renaming String vars to contain an additional descriptor as some are less intuitive than others
+	//TODO: May consider renaming String vars to contain an additional descriptor as some are less intuitive than others
 	
 	public static class Search {
 		public static final String input_Id = "find_desc";
@@ -30,16 +30,13 @@ public class YelpDom {
 	public static class Results {
 		
 		public static class Header {
-			//public static final String div_Css = "div.search-header";
 			public static final String h1_Css = "div.search-header > h1";			
 			public static final String span_Css = "div.search-header > span";
-//			public static final String div_Class = "search-header";
-//			public static final String h1_TagName = "h1";
 		}
 		
 		public static class Filters {		
 			public static final String Panel_div_Css = "div.filter-panel";
-			public static final String div_Css = "div.filter-set";// > h4"; Going to get the parent instead as getText() should return the H4 and get me the parent for further traversal
+			public static final String div_Css = "div.filter-set";
 			public static final String h4_TagName = "h4";
 			public static final String input_TagName = "input";
 			public static final String input_Attribute = "value";
@@ -60,6 +57,7 @@ public class YelpDom {
 			
 			public interface FilterType { 
 				String getValue();
+				//TODO: could also create a validating function to ensure that the proper FilterType is used with the correct FilterName
 			};
 			public enum SortBy implements FilterType {
 				BESTMATCH("best_match"), HIGHESTRATED("rating"), MOSTREVIEWED("review_count")
@@ -118,8 +116,41 @@ public class YelpDom {
 		        public String getValue() {
 		        	return this.value;
 		        }
-			}
+			}			
+		}
+		
+		public static class List {
+			public static final String results_Css = "div.search-results-content"; 
 			
+			public static class Result {				
+				public static final String result_Css = "div.search-result";
+				public static final String i_Css = "i.star-img";
+				public static final String i_Attribute = "title";				
+				public static final String ad_Css = "span.yloca-tip";
+				public static final String a_Css = "a.biz-name";
+			}			
+		}			
+	}
+	
+	public static class Details {
+		public static final String content_Css = "div.main-content-wrap";
+		public static final String name_Css = "div.biz-page-header-left > h1";
+		
+		public static class Info {		
+			public static final String address_Css = "div[class='media-story'] > address";
+			public static final String address_tagName = "address";
+			public static final String phone_Css = "span.biz-phone";
+			public static final String website_Css = "div.biz-website > a";
+		}
+		
+		public static class Reviews {
+			public static final String container_Id = "super-container";
+			//first 3 is ambiguous as there are 3 highlights, then the reviews
+			//here is the highlights
+			public static final String highlights_Css = "div.review-highlights > ul > li";
+			//here is the reviews
+			public static final String list_Css = "div.review-list > ul > li";
+			public static final String review_Css = "div.review-content > p";
 		}
 	}
 	
