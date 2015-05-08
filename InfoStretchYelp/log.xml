@@ -1,0 +1,1113 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2015-05-08T07:07:44</date>
+  <millis>1431094064275</millis>
+  <sequence>0</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>yelpSearchScenario</method>
+  <thread>1</thread>
+  <message>Starting test with the following args:
+searchFilter: RESTAURANTS
+subSearch: Pizza
+filterName: Price
+filterType: RestaurantsPriceRange2.1</message>
+</record>
+<record>
+  <date>2015-05-08T07:07:44</date>
+  <millis>1431094064306</millis>
+  <sequence>1</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>openSite</method>
+  <thread>1</thread>
+  <message>Step #1 Starting: Open up the test site</message>
+</record>
+<record>
+  <date>2015-05-08T07:07:53</date>
+  <millis>1431094073517</millis>
+  <sequence>2</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>openSite</method>
+  <thread>1</thread>
+  <message>Step #1 Completed: Open up the test site</message>
+</record>
+<record>
+  <date>2015-05-08T07:07:53</date>
+  <millis>1431094073517</millis>
+  <sequence>3</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>setSuggestion</method>
+  <thread>1</thread>
+  <message>Step #2-3 Starting: Choose a suggestion</message>
+</record>
+<record>
+  <date>2015-05-08T07:07:58</date>
+  <millis>1431094078176</millis>
+  <sequence>4</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>setSuggestion</method>
+  <thread>1</thread>
+  <message>Step #2-3 Completed : Choose a suggestion</message>
+</record>
+<record>
+  <date>2015-05-08T07:07:58</date>
+  <millis>1431094078395</millis>
+  <sequence>5</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>addSubSearch</method>
+  <thread>1</thread>
+  <message>Starting: Add a subSearch</message>
+</record>
+<record>
+  <date>2015-05-08T07:07:59</date>
+  <millis>1431094079395</millis>
+  <sequence>6</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>addSubSearch</method>
+  <thread>1</thread>
+  <message>Completed: Add a subSearch</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:02</date>
+  <millis>1431094082614</millis>
+  <sequence>7</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportResultNums</method>
+  <thread>1</thread>
+  <message>Starting: Report result numbers</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:02</date>
+  <millis>1431094082708</millis>
+  <sequence>8</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportResultNums</method>
+  <thread>1</thread>
+  <message>Results shown on this page: 10</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:02</date>
+  <millis>1431094082708</millis>
+  <sequence>9</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportResultNums</method>
+  <thread>1</thread>
+  <message>Total number of results: 1403</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:02</date>
+  <millis>1431094082721</millis>
+  <sequence>10</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportResultNums</method>
+  <thread>1</thread>
+  <message>Completed: Report result numbers</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:02</date>
+  <millis>1431094082721</millis>
+  <sequence>11</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>setFilters</method>
+  <thread>1</thread>
+  <message>Starting: Add a result filter</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:11</date>
+  <millis>1431094091337</millis>
+  <sequence>12</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>setFilters</method>
+  <thread>1</thread>
+  <message>Completed: Add a result filter</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:11</date>
+  <millis>1431094091337</millis>
+  <sequence>13</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportResultNums</method>
+  <thread>1</thread>
+  <message>Starting: Report result numbers</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:11</date>
+  <millis>1431094091431</millis>
+  <sequence>14</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportResultNums</method>
+  <thread>1</thread>
+  <message>Results shown on this page: 10</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:11</date>
+  <millis>1431094091431</millis>
+  <sequence>15</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportResultNums</method>
+  <thread>1</thread>
+  <message>Total number of results: 473</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:11</date>
+  <millis>1431094091435</millis>
+  <sequence>16</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportResultNums</method>
+  <thread>1</thread>
+  <message>Completed: Report result numbers</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:11</date>
+  <millis>1431094091435</millis>
+  <sequence>17</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportStars</method>
+  <thread>1</thread>
+  <message>Starting: Report star ratings</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:13</date>
+  <millis>1431094093827</millis>
+  <sequence>18</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportStars</method>
+  <thread>1</thread>
+  <message>Ratings for the results [4.5, 4.5, 4.5, 4.0, 3.5, 4.5, 4.0, 4.0, 3.5, 4.0]</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:13</date>
+  <millis>1431094093827</millis>
+  <sequence>19</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportStars</method>
+  <thread>1</thread>
+  <message>Completed: Report star ratings</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:13</date>
+  <millis>1431094093827</millis>
+  <sequence>20</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>yelpSearchScenario</method>
+  <thread>1</thread>
+  <message>Starting: Expand the first results</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:14</date>
+  <millis>1431094094123</millis>
+  <sequence>21</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>yelpSearchScenario</method>
+  <thread>1</thread>
+  <message>Completed: Expand the first results</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:14</date>
+  <millis>1431094094123</millis>
+  <sequence>22</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Starting Step #11: Log all info for the result (Address, Phone, web site details, First 3 reviews)</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:18</date>
+  <millis>1431094098269</millis>
+  <sequence>23</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Name: A Slice of New York</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:18</date>
+  <millis>1431094098271</millis>
+  <sequence>24</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Address: 3443 Stevens Creek Blvd
+San Jose, CA 95117</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:18</date>
+  <millis>1431094098271</millis>
+  <sequence>25</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Phone: (408) 247-5423</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:18</date>
+  <millis>1431094098271</millis>
+  <sequence>26</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Website: aSliceOfNY.com</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:18</date>
+  <millis>1431094098829</millis>
+  <sequence>27</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Review #1:
+OMG!  The more I eat here, the more I want to eat here!  I feel like a walking billboard sometimes when people ask "can I recommend a good place for pizza?"  A Slice of New York is the first place I think of and with two, two, two locations - both with fantastic food, you can't possibly go wrong!
+
+If you're not in the mood for the best tasting pizza, they've got you covered!  Meatball Parm sandwiches, garlic knots, Stromboli and Calzones!  Did someone say dessert?  Hello!?!  Can you say Cannoli's!!
+
+When I walk into either location, I feel like breaking out in song, "I'm in heaven!  I'm in heaven simply because I'm about to eat here!  I'm in heaven!  I'm in heaven simply because I'm getting food to go!"  But fortunately (for the other diners and all glass in the vicinity) I don't break out in song.  
+
+But get yourself to either location and enjoy!!
+</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:19</date>
+  <millis>1431094099035</millis>
+  <sequence>28</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Review #2:
+Not bad
+Wasn't bad, wasn't amazing.
+
+Had a slice of cheese and the buffalo chicken slice (ASONY garlic oil base, seasoned chicken breast, sliced onions, Franks Red Hot, fresh basil, fresh parmesan) which was recommended.
+</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:19</date>
+  <millis>1431094099256</millis>
+  <sequence>29</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Review #3:
+Take it from this New Yorker:  this place is legit only when compared to your corner neighborhood NY pizza joint that sells for $1/slice.
+
+Please do not be confused that this is representative of NY pizza - there are several types and A Slice of NY still doesn't measure up to some of the iconic NY pizza places like John's of Bleecker St, Grimaldi's, Lombardi's, Di Farro, or Joe's.
+
+But it's enough to satisfy my jonesing of a "piece of plain, extra hot" without taking a 5.5 hour flight.
+</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:19</date>
+  <millis>1431094099256</millis>
+  <sequence>30</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Completed Step #11: Log all info for the result (Address, Phone, web site details, First 3 reviews)</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:19</date>
+  <millis>1431094099352</millis>
+  <sequence>31</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>yelpSearchScenario</method>
+  <thread>1</thread>
+  <message>Starting test with the following args:
+searchFilter: BARS
+subSearch: Irish
+filterName: Price
+filterType: RestaurantsPriceRange2.2</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:19</date>
+  <millis>1431094099352</millis>
+  <sequence>32</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>openSite</method>
+  <thread>1</thread>
+  <message>Step #1 Starting: Open up the test site</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:28</date>
+  <millis>1431094108281</millis>
+  <sequence>33</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>openSite</method>
+  <thread>1</thread>
+  <message>Step #1 Completed: Open up the test site</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:28</date>
+  <millis>1431094108281</millis>
+  <sequence>34</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>setSuggestion</method>
+  <thread>1</thread>
+  <message>Step #2-3 Starting: Choose a suggestion</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:29</date>
+  <millis>1431094109354</millis>
+  <sequence>35</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>setSuggestion</method>
+  <thread>1</thread>
+  <message>Step #2-3 Completed : Choose a suggestion</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:33</date>
+  <millis>1431094113151</millis>
+  <sequence>36</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>addSubSearch</method>
+  <thread>1</thread>
+  <message>Starting: Add a subSearch</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:34</date>
+  <millis>1431094114167</millis>
+  <sequence>37</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>addSubSearch</method>
+  <thread>1</thread>
+  <message>Completed: Add a subSearch</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:37</date>
+  <millis>1431094117434</millis>
+  <sequence>38</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportResultNums</method>
+  <thread>1</thread>
+  <message>Starting: Report result numbers</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:37</date>
+  <millis>1431094117543</millis>
+  <sequence>39</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportResultNums</method>
+  <thread>1</thread>
+  <message>Results shown on this page: 10</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:37</date>
+  <millis>1431094117543</millis>
+  <sequence>40</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportResultNums</method>
+  <thread>1</thread>
+  <message>Total number of results: 206</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:37</date>
+  <millis>1431094117548</millis>
+  <sequence>41</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportResultNums</method>
+  <thread>1</thread>
+  <message>Completed: Report result numbers</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:37</date>
+  <millis>1431094117548</millis>
+  <sequence>42</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>setFilters</method>
+  <thread>1</thread>
+  <message>Starting: Add a result filter</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:46</date>
+  <millis>1431094126174</millis>
+  <sequence>43</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>setFilters</method>
+  <thread>1</thread>
+  <message>Completed: Add a result filter</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:46</date>
+  <millis>1431094126174</millis>
+  <sequence>44</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportResultNums</method>
+  <thread>1</thread>
+  <message>Starting: Report result numbers</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:46</date>
+  <millis>1431094126268</millis>
+  <sequence>45</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportResultNums</method>
+  <thread>1</thread>
+  <message>Results shown on this page: 10</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:46</date>
+  <millis>1431094126268</millis>
+  <sequence>46</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportResultNums</method>
+  <thread>1</thread>
+  <message>Total number of results: 146</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:46</date>
+  <millis>1431094126279</millis>
+  <sequence>47</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportResultNums</method>
+  <thread>1</thread>
+  <message>Completed: Report result numbers</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:46</date>
+  <millis>1431094126279</millis>
+  <sequence>48</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportStars</method>
+  <thread>1</thread>
+  <message>Starting: Report star ratings</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:48</date>
+  <millis>1431094128671</millis>
+  <sequence>49</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportStars</method>
+  <thread>1</thread>
+  <message>Ratings for the results [4.0, 3.0, 4.0, 4.0, 3.5, 3.5, 3.0, 3.5, 3.5, 3.5]</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:48</date>
+  <millis>1431094128671</millis>
+  <sequence>50</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportStars</method>
+  <thread>1</thread>
+  <message>Completed: Report star ratings</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:48</date>
+  <millis>1431094128671</millis>
+  <sequence>51</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>yelpSearchScenario</method>
+  <thread>1</thread>
+  <message>Starting: Expand the first results</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:48</date>
+  <millis>1431094128977</millis>
+  <sequence>52</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>yelpSearchScenario</method>
+  <thread>1</thread>
+  <message>Completed: Expand the first results</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:48</date>
+  <millis>1431094128977</millis>
+  <sequence>53</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Starting Step #11: Log all info for the result (Address, Phone, web site details, First 3 reviews)</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:53</date>
+  <millis>1431094133061</millis>
+  <sequence>54</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Name: O’Flaherty’s Irish Pub</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:53</date>
+  <millis>1431094133061</millis>
+  <sequence>55</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Address: 25 N San Pedro St
+San Jose, CA 95110</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:53</date>
+  <millis>1431094133062</millis>
+  <sequence>56</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Phone: (408) 947-8007</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:53</date>
+  <millis>1431094133062</millis>
+  <sequence>57</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Website: oflahertyspub.com</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:53</date>
+  <millis>1431094133484</millis>
+  <sequence>58</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Review #1:
+Great place to hang out before a Sharks game but get there early. We arrived at 4:15 and snagged the last table. There was a line to get in the rest of the time we were there. 5 stars for the Shark Attack - $8 for a pint of Great White and a shot of Jameson. Tip: do not order the #51 (My buddy ordered it because we couldn't pronounce the name). It tasted like yogurt molasses.
+
+3 stars for the food. We ordered burgers and a pizza. The fries were cold (from what I understand, they transport the food from across the street). It was cold &amp; rainy the night we were there, so I don't think the fries stood a chance of staying hot. The burger was solid. The pizza wasn't outstanding but again, solid. The crust was a medium thickness, crispy on the outside and chewy on the inside. It could have used a dash of salt. The sauce was seasoned nicely and didn't over power the cheese.
+
+What made this place four stars for me was the atmosphere and the service. Our waitress was slammed with multiple rowdy tables (including ours) and she always kept a smile on her face. She was patient with all of our questions and kept our glasses full. When she didn't have time to snap a picture for us, she sent over what I believe was the bouncer and he was happy to help us with that.
+
+By the time we got up to leave, we were surrounded by Senator fans. It was like we didn't get the memo or something: Fans of the opposing team shall meet here? Cheers to them, it ended up being their night.
+</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:53</date>
+  <millis>1431094133643</millis>
+  <sequence>59</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Review #2:
+I was hoping this place would fill this great void I had since leaving SF... the void of a dirty, down to earth Irish bar that served cheap beer, Irish food, and Irish bartenders with awesome accents.
+
+Disappointed.
+
+Service wasn't bad at the bar. There are TVs everywhere so I can imagine this is a popular spot to watch games. The place is big and the bathrooms were relatively clean.
+
+Looks like a place young people go to get shots of Jameson to get drunk.
+
+Worst part? Expensive beer. Most beer average about $7, a few were $6 and some $8... that's pretty outrageous to me.
+
+Unfortunately, I probably won't be back. My experience wasn't terrible, but I really can't justify paying $7 for a pint of Guinness.
+</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:53</date>
+  <millis>1431094133819</millis>
+  <sequence>60</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Review #3:
+I had no idea that this level of beer snobbery existed in downtown San Jose.  Well, it does.  They must have had 40 taps going - see the massive chalkboards above the bar for selection - and they offer flights for $12 even during prime time.  Bring it.
+</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:53</date>
+  <millis>1431094133820</millis>
+  <sequence>61</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Completed Step #11: Log all info for the result (Address, Phone, web site details, First 3 reviews)</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:53</date>
+  <millis>1431094133900</millis>
+  <sequence>62</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>yelpSearchScenario</method>
+  <thread>1</thread>
+  <message>Starting test with the following args:
+searchFilter: COFFEE_TEA
+subSearch: Bubble
+filterName: Sort By
+filterType: review_count</message>
+</record>
+<record>
+  <date>2015-05-08T07:08:53</date>
+  <millis>1431094133901</millis>
+  <sequence>63</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>openSite</method>
+  <thread>1</thread>
+  <message>Step #1 Starting: Open up the test site</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:02</date>
+  <millis>1431094142024</millis>
+  <sequence>64</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>openSite</method>
+  <thread>1</thread>
+  <message>Step #1 Completed: Open up the test site</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:02</date>
+  <millis>1431094142024</millis>
+  <sequence>65</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>setSuggestion</method>
+  <thread>1</thread>
+  <message>Step #2-3 Starting: Choose a suggestion</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:06</date>
+  <millis>1431094146557</millis>
+  <sequence>66</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>setSuggestion</method>
+  <thread>1</thread>
+  <message>Step #2-3 Completed : Choose a suggestion</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:06</date>
+  <millis>1431094146729</millis>
+  <sequence>67</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>addSubSearch</method>
+  <thread>1</thread>
+  <message>Starting: Add a subSearch</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:07</date>
+  <millis>1431094147698</millis>
+  <sequence>68</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>addSubSearch</method>
+  <thread>1</thread>
+  <message>Completed: Add a subSearch</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:10</date>
+  <millis>1431094150901</millis>
+  <sequence>69</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportResultNums</method>
+  <thread>1</thread>
+  <message>Starting: Report result numbers</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:11</date>
+  <millis>1431094151010</millis>
+  <sequence>70</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportResultNums</method>
+  <thread>1</thread>
+  <message>Results shown on this page: 10</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:11</date>
+  <millis>1431094151012</millis>
+  <sequence>71</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportResultNums</method>
+  <thread>1</thread>
+  <message>Total number of results: 1714</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:11</date>
+  <millis>1431094151012</millis>
+  <sequence>72</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportResultNums</method>
+  <thread>1</thread>
+  <message>Completed: Report result numbers</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:11</date>
+  <millis>1431094151012</millis>
+  <sequence>73</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>setFilters</method>
+  <thread>1</thread>
+  <message>Starting: Add a result filter</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:16</date>
+  <millis>1431094156448</millis>
+  <sequence>74</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>WARNING</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>setFilters</method>
+  <thread>1</thread>
+  <message>Using an emulated click for the filter as it failed</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:19</date>
+  <millis>1431094159555</millis>
+  <sequence>75</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>setFilters</method>
+  <thread>1</thread>
+  <message>Completed: Add a result filter</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:19</date>
+  <millis>1431094159555</millis>
+  <sequence>76</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportResultNums</method>
+  <thread>1</thread>
+  <message>Starting: Report result numbers</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:19</date>
+  <millis>1431094159680</millis>
+  <sequence>77</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportResultNums</method>
+  <thread>1</thread>
+  <message>Results shown on this page: 10</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:19</date>
+  <millis>1431094159680</millis>
+  <sequence>78</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportResultNums</method>
+  <thread>1</thread>
+  <message>Total number of results: 1714</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:19</date>
+  <millis>1431094159680</millis>
+  <sequence>79</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportResultNums</method>
+  <thread>1</thread>
+  <message>Completed: Report result numbers</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:19</date>
+  <millis>1431094159680</millis>
+  <sequence>80</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportStars</method>
+  <thread>1</thread>
+  <message>Starting: Report star ratings</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:22</date>
+  <millis>1431094162101</millis>
+  <sequence>81</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportStars</method>
+  <thread>1</thread>
+  <message>Ratings for the results [4.5, 3.5, 3.5, 4.0, 3.5, 4.0, 4.5, 3.5, 3.0, 4.5]</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:22</date>
+  <millis>1431094162101</millis>
+  <sequence>82</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportStars</method>
+  <thread>1</thread>
+  <message>Completed: Report star ratings</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:22</date>
+  <millis>1431094162101</millis>
+  <sequence>83</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>yelpSearchScenario</method>
+  <thread>1</thread>
+  <message>Starting: Expand the first results</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:22</date>
+  <millis>1431094162407</millis>
+  <sequence>84</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>yelpSearchScenario</method>
+  <thread>1</thread>
+  <message>Completed: Expand the first results</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:22</date>
+  <millis>1431094162407</millis>
+  <sequence>85</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Starting Step #11: Log all info for the result (Address, Phone, web site details, First 3 reviews)</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:26</date>
+  <millis>1431094166267</millis>
+  <sequence>86</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Name: Fresh Brew Coffee</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:26</date>
+  <millis>1431094166268</millis>
+  <sequence>87</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Address: 882 Bush St
+San Francisco, CA 94108</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:26</date>
+  <millis>1431094166268</millis>
+  <sequence>88</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Phone: (415) 567-0915</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:26</date>
+  <millis>1431094166268</millis>
+  <sequence>89</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Website: Not Found</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:26</date>
+  <millis>1431094166712</millis>
+  <sequence>90</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Review #1:
+Upside: friendly service, great food
+Downside: I waited longer than expected for my sandwich (not that big of a deal) and it was small
+
+Came here as we were walking to our car to go home. The cashier was really friendly and patient (we took our time ordering). We got a chocolate chocolate croissant and a BLT (you can guess who got what). The chocolate croissant was delicious and the BLT on sourdough was so good!!
+
+If you're looking for a full meal, you might want to get more than just the BLT
+</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:26</date>
+  <millis>1431094166947</millis>
+  <sequence>91</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Review #2:
+Small, whole in the wall establishment with friendly service. The chicken banh mi is the shredded version with mayo that is not overflowing, which I prefer. The chicken bits, while not in abundance like Saigon Sandwich, is sufficiently stuffed into my sandwich so that no ingredients run astray during my walk back to work. I can inhale the delicious morsels without leaving a trail.
+
+The Vietnamese iced coffee is on point. The ice isn't crushed as some establishments present them.
+</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:27</date>
+  <millis>1431094167141</millis>
+  <sequence>92</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>INFO</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Review #3:
+Simple, affordable, good. Small little shop that seems to have been here for a while. Now that I know it's here and it's fairly cheap and the food is good - I've been back a lot recently for lunch.
+Vietnamese sandwiches from $3.85-$5, American style sandwiches too from $5-$7, coffee and smoothies. Breakfast sandwiches $4-$5 and plates $6.75 too.
+
+edit: need to say that the Club sandwich here is fricking faaantastic!!! I eat it more often than I'd like to admit.
+
+Cute little place with a few tables inside and one outside with snacks and magazines/books.
+Just a great little local neighborhood place that I'm more than happy with. I'm here again right now for lunch :)
+</message>
+</record>
+<record>
+  <date>2015-05-08T07:09:27</date>
+  <millis>1431094167141</millis>
+  <sequence>93</sequence>
+  <logger>selinium.tests.YelpTests</logger>
+  <level>FINER</level>
+  <class>selinium.tests.YelpTests</class>
+  <method>reportDetailedInfo</method>
+  <thread>1</thread>
+  <message>Completed Step #11: Log all info for the result (Address, Phone, web site details, First 3 reviews)</message>
+</record>
+</log>
